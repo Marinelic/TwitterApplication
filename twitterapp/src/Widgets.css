@@ -1,0 +1,34 @@
+
+/* .widgets {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f8fa;
+    height: 100vh;
+    width: 300px;
+}
+
+.widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: #e6ecf0;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.widgets__input input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-left: 10px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.widgets__searchIcon {
+    color: gray;
+}
+
+.widgets__widgetContainer {
+    margin-top: 20px;
+} */
