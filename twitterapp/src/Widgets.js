@@ -23,9 +23,9 @@ function Widgets() {
             <TwitterTweetEmbed tweetId={"1880300451582935271"} />
 
             <TwitterTimelineEmbed
-          sourceType="profile"
-          screenName="cleverqazi"
-          options={{ height: 400 }}
+              sourceType="profile"
+              screenName="cleverqazi"
+              options={{ height: 400 }}
         />
 
         <TwitterShareButton
