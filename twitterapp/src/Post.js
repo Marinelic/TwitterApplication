@@ -18,17 +18,19 @@ function Post({
   return (
     <div className='post'>
       <div className='post__avatar'>
-         <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+         <Avatar src={avatar} />
       </div>
 
       <div className='post__body'> 
         <div className='post__header'>  
             <div className='post__headerText'>
-                <h3>Kygo{" "} <span className='post__headerSpecial'><VerifiedUserIcon className='post__badge'/> @KygoMusic</span></h3>
+                <h3>{dispayName}{" "} <span className='post__headerSpecial'>
+                  {verified && <VerifiedUserIcon className='post__badge'/>} @{username}</span>
+                </h3>
             </div>
 
             <div className='post__headerDescription'>
-                <p>Asia and Australia shows on sale now! </p>
+                <p> {text} </p>
             </div>
         </div>
 
