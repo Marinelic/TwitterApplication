@@ -34,7 +34,7 @@ function Post({
             </div>
         </div>
 
-            <img src='https://media.tenor.com/-ynlGrEzc1MAAAAM/kygo.gif' alt='GIF' />
+            <img src={image} alt='' />
 
           <div className='post__footer'> 
             <ChatBubbleOutlineIcon fontSize="small" />

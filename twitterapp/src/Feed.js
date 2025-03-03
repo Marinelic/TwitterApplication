@@ -42,8 +42,6 @@ function Feed() {
             image={post.image}
           />
         ))}
-        
-        
     </div>
   )
 }
