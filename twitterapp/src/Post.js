@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import { motion } from "framer-motion";
+
 import './Post.css';
 import Avatar from '@mui/material/Avatar';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
@@ -7,16 +9,17 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PublishIcon from '@mui/icons-material/Publish';
 
-function Post({
-    dispayName,
+
+const Post = forwardRef (({
+    displayName,
     username,
     verified,
     text,
     image,
     avatar
-}) {
+}, ref) => {
   return (
-    <div className='post'>
+    <motion.div className='post' ref={ref} layout>
       <div className='post__avatar'>
          <Avatar src={avatar} />
       </div>
@@ -24,7 +27,7 @@ function Post({
       <div className='post__body'> 
         <div className='post__header'>  
             <div className='post__headerText'>
-                <h3>{dispayName}{" "} <span className='post__headerSpecial'>
+                <h3>{displayName}{" "} <span className='post__headerSpecial'>
                   {verified && <VerifiedUserIcon className='post__badge'/>} @{username}</span>
                 </h3>
             </div>
@@ -43,8 +46,8 @@ function Post({
             <PublishIcon fontSize="small" />
           </div>
       </div>
-    </div>
-  )
-}
+      </motion.div>
+  );
+});
 
 export default Post;

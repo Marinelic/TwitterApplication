@@ -4,6 +4,7 @@ import TweetBox from './TweetBox';
 import Post from './Post';
 import { db }  from './firebase';
 import { collection, onSnapshot } from "firebase/firestore";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Feed() {
 
@@ -32,16 +33,21 @@ function Feed() {
         <TweetBox />
 
         {/* Post */}
-        {posts.map(post => (
-          <Post  
-            dispayName={post.dispayName}
-            username={post.username}
-            verified={post.verified}
-            text={post.text}
-            avatar={post.avatar}
-            image={post.image}
-          />
-        ))}
+        <AnimatePresence>
+          <motion.div layout>
+            {posts.map((post) => (
+                <Post  
+                  key={post.id}
+                  displayName={post.displayName}
+                  username={post.username}
+                  verified={post.verified}
+                  text={post.text}
+                  avatar={post.avatar}
+                  image={post.image}
+              />
+            ))}
+             </motion.div>
+        </AnimatePresence>
     </div>
   )
 }
