@@ -9,18 +9,18 @@ function TweetBox() {
 
   const [tweetMessage, setTweetMessage] = useState('');
   const [tweetImage, setTweetImage] = useState('');
-  const [posts, setPosts] = useState([]);
+  /* const [posts, setPosts] = useState([]); */
 
    const sendTweet = async (e) => {
     e.preventDefault();
 
       const tweetData = {
-        displayName: "Kygo",
-        username: "KygoMusic",
+        displayName: "Marisol",
+        username: "marichiu",
         verified: true,
         text: tweetMessage,
         avatar:
-          "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
+          "https://pbs.twimg.com/profile_images/476170088857751552/eE4zFTPF_400x400.jpeg",
     };
 
     if (tweetImage.trim() !== "") {
@@ -39,7 +39,7 @@ function TweetBox() {
     <div className='tweetBox'>
       <form>
         <div className='tweetBox__input'>
-            <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+            <Avatar src="https://pbs.twimg.com/profile_images/476170088857751552/eE4zFTPF_400x400.jpeg" />
 
             <input onChange={e => setTweetMessage(e.target.value)} value={tweetMessage} placeholder="What's happening?" type='text'></input>
         </div>

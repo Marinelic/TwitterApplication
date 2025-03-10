@@ -4,7 +4,8 @@ import TweetBox from './TweetBox';
 import Post from './Post';
 import { db }  from './firebase';
 import { collection, onSnapshot } from "firebase/firestore";
-import { motion, AnimatePresence } from "framer-motion";
+import FlipMove from 'react-flip-move';
+
 
 function Feed() {
 
@@ -13,41 +14,39 @@ function Feed() {
   useEffect(() => {
   const postsCollection = collection(db, "posts");
 
-  const unsubscribe = onSnapshot(postsCollection, (snapshot) => {
-    setPosts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+   const unsubscribe = onSnapshot(postsCollection, (snapshot) => {
+    const newPosts = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    console.log("Fetched posts:", newPosts);
+    setPosts(newPosts);
   });
 
   return () => unsubscribe();
 }, []);
 
+console.log("Posts data:", posts);
 
   return (
     <div className='feed'>
       
-        {/* Header */}
         <div className="feed__header">
         <h2>Home</h2>
       </div>
 
-        {/* TweetBox */}
         <TweetBox />
 
-        {/* Post */}
-        <AnimatePresence>
-          <motion.div layout>
-            {posts.map((post) => (
-                <Post  
-                  key={post.id}
-                  displayName={post.displayName}
-                  username={post.username}
-                  verified={post.verified}
-                  text={post.text}
-                  avatar={post.avatar}
-                  image={post.image}
-              />
-            ))}
-             </motion.div>
-        </AnimatePresence>
+        <FlipMove>
+          {posts.map((post) => (
+          <Post  
+            key={post.text}
+            displayName={post.displayName}
+            username={post.username}
+            verified={post.verified}
+            text={post.text}
+            avatar={post.avatar}
+            image={post.image}
+          />
+        ))} 
+        </FlipMove>
     </div>
   )
 }
