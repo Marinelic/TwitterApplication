@@ -1,4 +1,4 @@
-.post {
+/* .post {
     display: flex;
     align-items: flex-start;
     border-bottom: 1px solid var(--twitter-background);
@@ -44,4 +44,38 @@
 
 .post__avatar {
     padding: 20px;
+} */
+
+
+
+
+
+
+.post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: gray;
+}
+
+.post__footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.post__footer button span {
+    margin-left: 5px;
 }
